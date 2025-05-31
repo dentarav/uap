@@ -30,6 +30,15 @@ public class Torus extends Shape implements ThreeDimensional, PiRequired, MassCa
     }
 
     @Override
+    public void printInfo() {
+        System.out.println("Volume : " + getVolume());
+        System.out.println("Luas permukaan : " + getSurfaceArea());
+        System.out.println("Massa : " + getMass());
+        System.out.println("Massa dalam kg : " + gramToKilogram());
+        System.out.println("Biaya kirim : Rp" + calculateCost());
+    }
+
+    @Override
     public double gramToKilogram() {
         return getMass() / DENOMINATOR;
     }
@@ -40,12 +49,4 @@ public class Torus extends Shape implements ThreeDimensional, PiRequired, MassCa
         return Math.ceil(kg) * PRICE_PER_KG;
     }
 
-    @Override
-    public void printInfo() {
-        System.out.println("Volume : " + getVolume());
-        System.out.println("Luas permukaan : " + getSurfaceArea());
-        System.out.println("Massa : " + getMass());
-        System.out.println("Massa dalam kg : " + gramToKilogram());
-        System.out.println("Biaya kirim : Rp" + calculateCost());
-    }
 }
